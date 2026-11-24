@@ -1,0 +1,8 @@
+Copyright (c) 2026. Todos os direitos reservados.
+
+Este repositório contém apenas o código do aplicativo do celular do Controle
+Financeiro da casa. Nenhum dado financeiro fica aqui: os dados ficam numa nuvem
+protegida por login, senha e segundo fator.
+
+O código está visível porque o GitHub Pages gratuito exige repositório público.
+Não há licença de uso, cópia, modificação ou distribuição.

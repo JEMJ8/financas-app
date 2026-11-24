@@ -1,0 +1,71 @@
+/* Pecas proprias das telas: numeros do Inicio, lista por dia dos Lancamentos, filtros, contas e faturas, pessoas, Mais. */
+
+/* ---------------------------------------------------------------- Inicio: os quatro numeros */
+.grade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: var(--e3); }
+.numero {
+  min-height: 96px;
+  padding: var(--e3) 14px;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-3);
+  box-shadow: var(--sombra);
+}
+.numero-rotulo { color: var(--texto-2); font-size: var(--t-pequeno); font-weight: 600; }
+.numero-valor { margin: 2px 0; font-size: var(--t-numero); font-weight: 750; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; line-height: 1.2; }
+.numero-comp { color: var(--texto-3); font-size: var(--t-pequeno); line-height: 1.35; }
+.numero-comp b { font-weight: 700; }
+.numero-comp .selo { white-space: normal; }
+.sobe { color: var(--erro); }
+.desce { color: var(--ok); }
+
+@media (max-width: 359px) {
+  .grade { gap: var(--e2); }
+  .numero { padding: 10px var(--e3); }
+  .numero-valor { font-size: 1.1875rem; }
+}
+
+/* ---------------------------------------------------------------- Lancamentos */
+.busca-caixa { position: relative; }
+.busca-caixa .icone { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--texto-2); pointer-events: none; }
+.busca-caixa .entrada { padding-left: 42px; }
+.filtros { display: flex; flex-direction: column; gap: var(--e3); margin: var(--e3) 0 var(--e2); }
+.painel-filtros { display: flex; flex-direction: column; gap: 14px; padding: 14px; background: var(--superficie); border: 1px solid var(--borda); border-radius: var(--raio-3); }
+.painel-filtros .campo-rotulo { font-size: var(--t-pequeno); color: var(--texto-2); }
+.chip .icone { flex: none; }
+.contagem { margin: var(--e3) 2px var(--e2); color: var(--texto-2); font-size: var(--t-pequeno); }
+.contagem b { color: var(--texto); font-variant-numeric: tabular-nums; }
+.dia { margin: var(--e4) 2px 6px; color: var(--texto-3); font-size: var(--t-pequeno); font-weight: 700; }
+.dia:first-letter { text-transform: uppercase; }
+.mais-linhas { margin-top: var(--e3); }
+
+/* ---------------------------------------------------------------- detalhe do lancamento */
+.detalhe-valor { font-size: 1.75rem; font-weight: 750; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; line-height: 1.2; }
+.detalhe-frase { margin-top: 2px; }
+
+/* ---------------------------------------------------------------- Contas */
+.conta-cabeca { display: flex; align-items: flex-start; gap: var(--e3); }
+.conta-icone { display: grid; flex: none; place-items: center; width: 40px; height: 40px; border-radius: var(--raio-2); background: var(--destaque-suave); color: var(--destaque-texto); }
+.conta-nome { font-weight: 700; line-height: 1.3; }
+.conta-meta { color: var(--texto-3); font-size: var(--t-pequeno); }
+.conta-saldo { margin-top: var(--e3); padding-top: var(--e3); border-top: 1px solid var(--borda); }
+.conta-saldo-valor { font-size: 1.375rem; font-weight: 750; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.mini-linha { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--borda); }
+.mini-linha:first-child { border-top: 0; }
+.mini-linha .t { font-weight: 600; }
+.mini-linha .m { grid-column: 1 / -1; color: var(--texto-3); font-size: var(--t-pequeno); }
+.mini-linha .v { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.mini-linha .selos { grid-column: 1 / -1; }
+
+/* ---------------------------------------------------------------- Pessoas */
+.pessoa-ponto { display: inline-block; flex: none; width: 12px; height: 12px; margin-right: var(--e2); border-radius: 50%; background: var(--serie-neutra); transform: translateY(1px); }
+.dado-linha { display: flex; justify-content: space-between; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--borda); font-size: 0.9375rem; }
+.dado-linha:last-child { border-bottom: 0; }
+.dado-linha span:first-child { color: var(--texto-3); }
+.dado-linha span:last-child { font-variant-numeric: tabular-nums; text-align: right; }
+
+/* ---------------------------------------------------------------- Mais */
+.rodape-versao { margin-top: var(--e5); }
+.pendencia-pergunta { margin-top: 4px; color: var(--texto-2); font-size: var(--t-pequeno); }
+
+.secao-titulo + .nota { margin: -4px 2px 10px; }
+.pilha { display: flex; flex-direction: column; gap: var(--e3); }

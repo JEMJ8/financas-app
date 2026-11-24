@@ -1,0 +1,151 @@
+/* Tokens de cor, espaco, forma e tipo. UNICO lugar com cor escrita por extenso: o resto do CSS so usa var(--...).
+   As cores sao as da identidade do celular (celular/identidade-celular.json, direcao A: o azul do programa do computador,
+   com os tons ajustados para passar na medicao de contraste nos dois temas). Nao trocar um tom sem medir de novo.
+   O tema escuro vale de dois jeitos: automatico (prefers-color-scheme) e escolhido a mao (data-tema="escuro" no <html>).
+   Os dois blocos escuros abaixo precisam ser IGUAIS: se mudar um, mude o outro. */
+
+:root {
+  color-scheme: light dark;
+
+  --fundo: #F4F4F2;
+  --superficie: #FFFFFF;
+  --superficie-2: #F0F0ED;
+  --borda: #E2E2DD;
+  --borda-forte: #8A8982;
+  --texto: #111111;
+  --texto-2: #4A4945;
+  --texto-3: #64635D;
+  --destaque: #1F5FAD;
+  --sobre-destaque: #FFFFFF;
+  --destaque-texto: #1A55A0;
+  --destaque-suave: #E6EEF8;
+  --barra: #FFFFFF;
+  --barra-texto: #4A4945;
+  --barra-ativo: #1A55A0;
+  --ok: #0F7A55;
+  --ok-suave: #E3F4EC;
+  --alerta: #8A5A00;
+  --alerta-suave: #FDF3D7;
+  --erro: #B3261E;
+  --erro-suave: #FBE9E7;
+  --info: #1A55A0;
+  --info-suave: #E6EEF8;
+  --foco: #1F5FAD;
+
+  /* series dos graficos: sempre acompanhadas de texto com o valor (a cor nunca e a unica pista) */
+  --serie-renda: #0F7A55;
+  --serie-consumo: #1F5FAD;
+  --serie-desejo: #8A5A00;
+  --serie-neutra: #C9C8C0;
+
+  --veu: rgba(17, 17, 17, 0.45);
+  --sombra: 0 1px 2px rgba(0, 0, 0, 0.05), 0 6px 18px rgba(0, 0, 0, 0.06);
+  --sombra-2: 0 8px 28px rgba(0, 0, 0, 0.18);
+  --fundo-qr: #FFFFFF;
+
+  /* espaco */
+  --e1: 4px;
+  --e2: 8px;
+  --e3: 12px;
+  --e4: 16px;
+  --e5: 24px;
+  --e6: 32px;
+  --gutter: 16px;
+
+  /* forma */
+  --raio-1: 8px;
+  --raio-2: 12px;
+  --raio-3: 14px;
+  --raio-pilula: 999px;
+  --alvo: 44px;                /* menor lado de qualquer area de toque */
+
+  /* tipo: a letra do proprio celular; tamanhos em rem acompanham o ajuste de letra do aparelho */
+  --fonte: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fonte-mono: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Menlo, Consolas, monospace;
+  --t-mini: 0.8125rem;         /* 13 px: so selos e rotulos da barra de baixo */
+  --t-pequeno: 0.875rem;       /* 14 px */
+  --t-corpo: 1rem;             /* 16 px */
+  --t-destaque: 1.0625rem;     /* 17 px */
+  --t-titulo: 1.375rem;        /* 22 px */
+  --t-numero: 1.375rem;        /* 22 px */
+
+  --largura-max: 640px;
+  --altura-barra: 58px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema="claro"]) {
+    --fundo: #131312;
+    --superficie: #1C1C1B;
+    --superficie-2: #252523;
+    --borda: #33332F;
+    --borda-forte: #7C7B73;
+    --texto: #F5F5F3;
+    --texto-2: #C9C8BE;
+    --texto-3: #A3A298;
+    --destaque: #6FA8F0;
+    --sobre-destaque: #0B1626;
+    --destaque-texto: #8DB9F3;
+    --destaque-suave: #1B2B40;
+    --barra: #1C1C1B;
+    --barra-texto: #C9C8BE;
+    --barra-ativo: #8DB9F3;
+    --ok: #5CCB98;
+    --ok-suave: #163025;
+    --alerta: #E8B24A;
+    --alerta-suave: #322713;
+    --erro: #F29089;
+    --erro-suave: #351C1A;
+    --info: #8DB9F3;
+    --info-suave: #1B2B40;
+    --foco: #6FA8F0;
+    --serie-renda: #5CCB98;
+    --serie-consumo: #6FA8F0;
+    --serie-desejo: #E8B24A;
+    --serie-neutra: #4A4A45;
+    --veu: rgba(0, 0, 0, 0.66);
+    --sombra: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 18px rgba(0, 0, 0, 0.3);
+    --sombra-2: 0 8px 28px rgba(0, 0, 0, 0.6);
+    --fundo-qr: #FFFFFF;
+  }
+}
+
+:root[data-tema="escuro"] {
+  color-scheme: dark;
+  --fundo: #131312;
+  --superficie: #1C1C1B;
+  --superficie-2: #252523;
+  --borda: #33332F;
+  --borda-forte: #7C7B73;
+  --texto: #F5F5F3;
+  --texto-2: #C9C8BE;
+  --texto-3: #A3A298;
+  --destaque: #6FA8F0;
+  --sobre-destaque: #0B1626;
+  --destaque-texto: #8DB9F3;
+  --destaque-suave: #1B2B40;
+  --barra: #1C1C1B;
+  --barra-texto: #C9C8BE;
+  --barra-ativo: #8DB9F3;
+  --ok: #5CCB98;
+  --ok-suave: #163025;
+  --alerta: #E8B24A;
+  --alerta-suave: #322713;
+  --erro: #F29089;
+  --erro-suave: #351C1A;
+  --info: #8DB9F3;
+  --info-suave: #1B2B40;
+  --foco: #6FA8F0;
+  --serie-renda: #5CCB98;
+  --serie-consumo: #6FA8F0;
+  --serie-desejo: #E8B24A;
+  --serie-neutra: #4A4A45;
+  --veu: rgba(0, 0, 0, 0.66);
+  --sombra: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 18px rgba(0, 0, 0, 0.3);
+  --sombra-2: 0 8px 28px rgba(0, 0, 0, 0.6);
+  --fundo-qr: #FFFFFF;
+}
+
+:root[data-tema="claro"] {
+  color-scheme: light;
+}
